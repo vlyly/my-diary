@@ -1,0 +1,17 @@
+$flex-map: (
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  center: center,
+);
+
+@function get-flex-value($key) {
+  @return map-get($flex-map, $key);
+} //function은 따로 import 하지 않아도 사용할 수 있음, 값을 리턴함. mixin은 코드를 반환
+
+@mixin flexbox($jc: center, $ai: center) {
+  display: flex;
+  align-items: get-flex-value($ai);
+  justify-content: get-flex-value($jc);
+} //기본값 center로 설정
