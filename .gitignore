@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#ect
+
+public/manifest.json
+public/robots.txt
+src/App.test.js
+src/assets/font/
+src/assets/img/movie02.mp4
+src/assets/img/movie1.mp4
+src/reportWebVitals.js
+src/setupTests.js
+yarn.lock
