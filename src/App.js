@@ -1,10 +1,9 @@
-import React from 'react'
 import Signin from './routes/sigin'
 
-function App() {
+function App({ authService }) {
   return (
     <div className="App">
-      <Signin />
+      <Signin authService={authService} />
     </div>
   )
 }

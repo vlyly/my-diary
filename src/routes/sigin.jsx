@@ -2,12 +2,6 @@ import React from 'react'
 /**components**/
 import Footer from '../components/footer'
 import Header from '../components/header'
-/**firease**/
-import { signInWithRedirect } from '@firebase/auth'
-import { initializeApp } from '@firebase/app'
-import { getAuth } from '@firebase/auth'
-import { GoogleAuthProvider } from '@firebase/auth'
-import { GithubAuthProvider } from 'firebase/auth'
 /**css**/
 import '../style/main.css'
 /**assets**/
@@ -15,28 +9,9 @@ import movie from '../assets/img/movie1.mp4'
 import google_icon from '../assets/img/google.png'
 import github_icon from '../assets/img/github.png'
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyA_hlExouAbl5KCHDlYFbV0reEFrHOcn0A',
-  authDomain: 'my-diary-c2a62.firebaseapp.com',
-  projectId: 'my-diary-c2a62',
-  storageBucket: 'my-diary-c2a62.appspot.com',
-  messagingSenderId: '1086490263118',
-  appId: '1:1086490263118:web:271fed5c37b968bfb34d1f',
-  measurementId: 'G-9C2HL75KF9',
-}
-
-const Signin = () => {
-  const signin_with_social = async (event) => {
-    initializeApp(firebaseConfig) /**초기화**/
-    const auth = getAuth()
-    let provider
-    if (event.currentTarget.name === 'google') {
-      provider = new GoogleAuthProvider()
-    }
-    if (event.currentTarget.name === 'github') {
-      provider = new GithubAuthProvider()
-    }
-    await signInWithRedirect(auth, provider)
+const Signin = ({ authService }) => {
+  const signin_with_social = (event) => {
+    authService.login(event.currentTarget.name)
   }
   return (
     <div className="sign-in-wrapper">
