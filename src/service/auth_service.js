@@ -3,15 +3,16 @@ import {
   getAuth,
   GoogleAuthProvider,
   GithubAuthProvider,
-  signInWithRedirect,
+  signOut,
+  signInWithPopup,
 } from 'firebase/auth'
 import firebaseConfig from './firebase'
 
 class AuthService {
   login(providerName) {
     initializeApp(firebaseConfig)
-    let provider
     const auth = getAuth()
+    let provider
     if (providerName === 'google') {
       provider = new GoogleAuthProvider()
     }
@@ -19,7 +20,19 @@ class AuthService {
       provider = new GithubAuthProvider()
     }
 
-    return signInWithRedirect(auth, provider)
+    return signInWithPopup(auth, provider)
+  }
+
+  logout() {
+    initializeApp(firebaseConfig)
+
+    return signOut(getAuth())
+  }
+
+  auth() {
+    initializeApp(firebaseConfig)
+
+    return getAuth()
   }
 }
 
