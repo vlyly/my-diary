@@ -1,4 +1,4 @@
-<h2>🗒️My Diary🗒️</h2>
+<h2>📕My Diary📕</h2>
 일기장, 친구 명함, 메모장을 지원하는 다이어리<strong>(Internet Explorer 미지원)</strong>
 
 <h3>목차</h3>
@@ -19,11 +19,18 @@ l. 목표<br>
 <h3>미리보기</h3>
 <div align="center">
 
+![my-diary](https://user-images.githubusercontent.com/69294741/145960565-c39a3910-caef-4e72-883e-98224d35da4d.png)
+
 </div>
 
 <hr>
 <h3>배운 점</h3>
 1. firebase의 여러 기능, 셋팅<br>
+2. react-router-dom v6<br>
+　* component => element<br>
+　* 가장 일치하는 경로를 자동으로 매칭(exact X)<br>
+　* useHistory => useNavigate<br>
+　* Switch => Routes
 
 <hr>
 <h3>개선할 점</h3>
